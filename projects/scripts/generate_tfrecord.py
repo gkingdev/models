@@ -26,14 +26,10 @@ FLAGS = flags.FLAGS
 
 
 def class_text_to_int(row_label):
-    if row_label == 'Raspberry_Pi_3':
+    if row_label == 'copper_rock_1':
         return 1
-    elif row_label == 'Arduino_Nano':
+    elif row_label == 'copper_rock_2':
         return 2
-    elif row_label == 'ESP8266':
-        return 3
-    elif row_label == 'Heltec_ESP32_Lora':
-        return 4
     else:
         return None
 
