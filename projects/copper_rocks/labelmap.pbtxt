@@ -1,0 +1,8 @@
+item {
+    id: 1
+    name: 'copper_rock_1'
+}
+item {
+    id: 2
+    name: 'copper_rock_2'
+}
