@@ -4,7 +4,6 @@ import os
 import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
-import sys, getopt
 
 
 def xml_to_csv(path):
@@ -28,22 +27,7 @@ def xml_to_csv(path):
     return xml_df
 
 
-def main(argv):
-    inputfile = ''
-    try:
-        opts, args = getopt.getopt(argv, "hi:o:", ["ifile=", "ofile="])
-    except getopt.GetoptError:
-        print('test.py -i <inputfile> -o <outputfile>')
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == '-h':
-            print('test.py -i <inputfile> -o <outputfile>')
-            sys.exit()
-        elif opt in ("-i", "--ifile"):
-            inputfile = arg
-    print('Input file is "', inputfile)
-    if inputfile == "":
-        sys.exit()
+def main():
     for folder in ['train', 'test']:
         image_path = os.path.join(os.getcwd(), ('images/' + folder))
         xml_df = xml_to_csv(image_path)
@@ -51,6 +35,4 @@ def main(argv):
     print('Successfully converted xml to csv.')
 
 
-if __name__ == "__main__":
-    main(sys.argv[1:])
-
+main()
